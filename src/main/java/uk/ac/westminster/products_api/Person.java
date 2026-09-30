@@ -18,7 +18,7 @@ public class Person {
     private String name;
     private String email;
 
-    public Person () {
+    public Person() {
     }
 
     public Person(String name) {
@@ -33,9 +33,7 @@ public class Person {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() { return email; }
 
     // TODO (Activity 3): add the "email" field and its getter here.
 
