@@ -13,8 +13,8 @@ public class ProductService {
 
     // Constructor to seed both product types
     public ProductService(){
-        products.add(new DigitalProduct(1, "E-Book", 9.99, "https://example.com/book.pdf", 14.5));
-        products.add(new PhysicalProduct(2, "Mechanical Keyboard", 89.99, 0.85, "35x13x4 cm"));
+        products.add(new DigitalProduct(1L, "E-Book", 9.99, "https://example.com/book.pdf", 14.5));
+        products.add(new PhysicalProduct(2L, "Mechanical Keyboard", 89.99, 0.85, "35x13x4 cm"));
         nextId = 3L;
     }
 
@@ -32,6 +32,16 @@ public class ProductService {
         return products.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst();
+    }
+
+
+
+    public List<String> getAllSummaries() {
+        List<String> summaries = new ArrayList<>();
+        for (Product p : products) {
+            summaries.add(p.getSummary());
+        }
+        return summaries;
     }
 
     public void deleteProduct(Long id) {
